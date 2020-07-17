@@ -1,68 +1,102 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Shrug
 
-## Available Scripts
+#### By Tyler Bates
+<hr/>
 
-In the project directory, you can run:
+## Description
 
-### `npm start`
+A React Web application for a restuarant suggestion generator. <br>
+The user signs in and is prompted to input their price range and zip code. The application will then return an restaurant within the parameters of the user inputs. 
+<hr />
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Component Diagrams
+### App Design
+<img src='./public/component-diagram.drawio.png'>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Card Design
+<img src='./public/card-diagram.drawio.png'>
 
-### `npm test`
+<hr/>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Logistics
 
-### `npm run build`
+|||
+|-----|-----|
+| :ballot_box_with_check: |User can register|
+| :ballot_box_with_check: |User can log in with registered email and password|
+| :ballot_box_with_check: |User can log out from navigation menu|
+| :ballot_box_with_check: |User can navigate to home screen from menu|
+| :ballot_box: |User can input preferred price range and zip code|
+| :ballot_box: |Results card will output random restaurant within parameters|
+| :ballot_box: |Results card will include GoogleMap pinned location of restaurant|
+| :ballot_box: |User can re-roll if not satisfied with output restaurant|
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup/Installation Requirements
 
-### `npm run eject`
+1. Clone this projects repository into your local directory following [these](https://www.linode.com/docs/development/version-control/how-to-install-git-and-clone-a-github-repository/) instructions.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Open the now local project folder with [VSC](https://code.visualstudio.com/Download) or an equivalent
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Navigate to the project directory from your terminal by entering the following:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+$ cd ~/quiz-of-choice
+```
+4. Within the projects directory install all required dependencies with
+```
+$ npm install
+```
+5. Run the application to view in your browser with
+```
+$ npm run start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+>If the browser does not automatically launch, view the project [here](https://localhost:3000)
 
-## Learn More
+<hr/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Known Bugs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### There are no known bugs at this time
+If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the [Open Source Guide](https://opensource.guide/).
 
-### Code Splitting
+<hr/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Technologies Used
 
-### Analyzing the Bundle Size
+- JavaScript
+- React
+- Firebase
+- Firestore
+- Yelp Api
+- Google Api
+- Puppeteer
+- Redux
+- Reactstrap
+- Bootstrap
+- HTML
+- CSS
+- Git
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<hr/>
 
-### Making a Progressive Web App
+## Legal
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+#### Apache License V2.0
 
-### Advanced Configuration
+Copyright 2020 Tyler Bates, DJ Zevenbergen & Khansahab Khakwan @ Epicodus
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-### Deployment
+http://www.apache.org/licenses/LICENSE-2.0
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
