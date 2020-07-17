@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from './Navbar';
+import Navbar from './NavBar';
 import ShrugControl from './ShrugControl';
 import SignIn from '/Signin';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
