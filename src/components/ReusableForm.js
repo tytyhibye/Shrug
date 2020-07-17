@@ -31,6 +31,12 @@ function ReusableForm(props) {
             type='radio' />
         </Form.Group>
         <Form.Group>
+          <Form.Control
+            zipCode='zipCode'
+            type='text'
+            placeHolder='Zip Code' />
+        </Form.Group>
+        <Form.Group>
           <Form.Control>
             <br /> <br />
             <Button className='Btn' type='submit'>
