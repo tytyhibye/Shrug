@@ -25,7 +25,7 @@ The user signs in and is prompted to input their price range and zip code. The a
 | :ballot_box_with_check: |User can register|
 | :ballot_box_with_check: |User can log in with registered email and password|
 | :ballot_box_with_check: |User can log out from navigation menu|
-| :ballot_box_with_check: |User can navigate to home screen from menu|
+| :ballot_box_with_check: |User can access the projects github repository from navigation menu|
 | :ballot_box: |User can input preferred price range and zip code|
 | :ballot_box: |Results card will output random restaurant within parameters|
 | :ballot_box: |Results card will include GoogleMap pinned location of restaurant|

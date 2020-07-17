@@ -22,22 +22,22 @@ function SignIn() {
     });
   }
         
-        return (
-          <React.Fragment>
-            {redirect}
-    <div style={signInStyles}>
-      <h1>Sign In</h1>
-      <form onSubmit={doSignIn}>
-        <input type="text" name="signInEmail" placeholder="Email" />
-        <br />
-        <input type="password" name="signInPassword" placeholder="Password" />
-        <br />
-        <br />
-        <button  type="submit">Sign In</button>
-      </form>
-            </div>
-    </React.Fragment>
-  );
-}
+    return (
+      <React.Fragment>
+        {redirect}
+        <div style={signInStyles}>
+          <h1>Sign In</h1>
+          <form onSubmit={doSignIn}>
+            <input type="text" name="signInEmail" placeholder="Email" />
+            <br />
+            <input type="password" name="signInPassword" placeholder="Password" />
+            <br />
+            <br />
+            <button  type="submit">Sign In</button>
+          </form>
+        </div>
+      </React.Fragment>
+    );
+  }
 
 export default SignIn

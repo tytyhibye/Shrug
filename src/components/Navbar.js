@@ -27,7 +27,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="">Github Repo</Nav.Link>
+            <Nav.Link href="https://github.com/tytyhibye/Shrug">Github Repo</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item><Link className="homeLink" to="/">Home</Link></NavDropdown.Item>
               <NavDropdown.Divider />
