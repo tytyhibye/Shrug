@@ -36,7 +36,7 @@ The user signs in and is prompted to input their price range and zip code. The a
 
 ||Stretch Goals|
 |-----|-----|
-|  |Clean, Responsive UI|
+| :heavy_check_mark: |Clean, Responsive UI|
 |  |Adding results to database to prevent duplicate results|
 |  |Using IBM Watson API for chatbot interactivity|
 |  |Search functionality for restaurants in general area|
