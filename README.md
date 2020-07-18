@@ -26,21 +26,21 @@ The user signs in and is prompted to input their price range and zip code. The a
 | :heavy_check_mark: |User can log in with registered email and password|
 | :heavy_check_mark: |User can log out from navigation menu|
 | :heavy_check_mark: |User can access the projects github repository from navigation menu|
-| :black_square_button: |User can input preferred price range and zip code|
-| :black_square_button: |Results card will output random restaurant within parameters|
-| :black_square_button: |Results card will include GoogleMap pinned location of restaurant|
-| :black_square_button: |User can re-roll if not satisfied with output restaurant|
+|  |User can input preferred price range and zip code|
+|  |Results card will output random restaurant within parameters|
+|  |Results card will include GoogleMap pinned location of restaurant|
+|  |User can re-roll if not satisfied with output restaurant|
 
 <br/>
 <br/>
 
 ||Stretch Goals|
 |-----|-----|
-| :black_square_button: |Clean, Responsive UI|
-| :black_square_button: |Adding results to database to prevent duplicate results|
-| :black_square_button: |Using IBM Watson API for chatbot interactivity|
-| :black_square_button: |Search functionality for restaurants in general area|
-| :black_square_button: |Hosting|
+|  |Clean, Responsive UI|
+|  |Adding results to database to prevent duplicate results|
+|  |Using IBM Watson API for chatbot interactivity|
+|  |Search functionality for restaurants in general area|
+|  |Hosting|
 
 <hr />
 
