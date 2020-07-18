@@ -3,10 +3,10 @@
 #### By Tyler Bates
 <hr/>
 
-## Description
+## Proposal
 
 A React Web application for a restuarant suggestion generator. <br>
-The user signs in and is prompted to input their price range and zip code. The application will then return an restaurant within the parameters of the user inputs. 
+The user signs in and is prompted to input their price range and zip code. The application will then return a restaurant within the parameters of the user inputs. 
 <hr />
 
 ## Component Diagrams
@@ -20,16 +20,27 @@ The user signs in and is prompted to input their price range and zip code. The a
 
 ## Logistics
 
-|||
+||Minimum Product Features|
 |-----|-----|
-| :ballot_box_with_check: |User can register|
-| :ballot_box_with_check: |User can log in with registered email and password|
-| :ballot_box_with_check: |User can log out from navigation menu|
-| :ballot_box_with_check: |User can access the projects github repository from navigation menu|
-| :ballot_box: |User can input preferred price range and zip code|
-| :ballot_box: |Results card will output random restaurant within parameters|
-| :ballot_box: |Results card will include GoogleMap pinned location of restaurant|
-| :ballot_box: |User can re-roll if not satisfied with output restaurant|
+| :heavy_check_mark: |User can register|
+| :heavy_check_mark: |User can log in with registered email and password|
+| :heavy_check_mark: |User can log out from navigation menu|
+| :heavy_check_mark: |User can access the projects github repository from navigation menu|
+| :black_square_button: |User can input preferred price range and zip code|
+| :black_square_button: |Results card will output random restaurant within parameters|
+| :black_square_button: |Results card will include GoogleMap pinned location of restaurant|
+| :black_square_button: |User can re-roll if not satisfied with output restaurant|
+
+<br/>
+<br/>
+
+||Stretch Goals|
+|-----|-----|
+| :black_square_button: |Clean, Responsive UI|
+| :black_square_button: |Adding results to database to prevent duplicate results|
+| :black_square_button: |Using IBM Watson API for chatbot interactivity|
+| :black_square_button: |Search functionality for restaurants in general area|
+| :black_square_button: |Hosting|
 
 <hr />
 
@@ -73,6 +84,7 @@ If you have a bug or an idea, browse the open issues before opening a new one. Y
 - Firestore
 - Yelp Api
 - Google Api
+- IBM Watson Api
 - Puppeteer
 - Redux
 - Reactstrap
