@@ -54,7 +54,7 @@ The user signs in and is prompted to input their price range and zip code. The a
 3. Navigate to the project directory from your terminal by entering the following:
 
 ```
-$ cd ~/quiz-of-choice
+$ cd ~/shrug-js
 ```
 4. Within the projects directory install all required dependencies with
 ```
