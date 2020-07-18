@@ -1,4 +1,4 @@
-<a img src="https://i.ibb.co/5F5dD37/logo-cap.jpg" alt="shrug logo"></a>
+![](https://i.ibb.co/5F5dD37/logo-cap.jpg)
 <br />
 
 #### By Tyler Bates
