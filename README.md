@@ -99,7 +99,7 @@ If you have a bug or an idea, browse the open issues before opening a new one. Y
 
 #### Apache License V2.0
 
-Copyright 2020 Tyler Bates, DJ Zevenbergen & Khansahab Khakwan @ Epicodus
+Copyright 2020 Tyler Bates @ Epicodus
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
