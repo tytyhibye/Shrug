@@ -9,45 +9,43 @@ const ReusableFormStyle = {
   alignItems: "flex-start",
   flexWrap: "wrap",
 };
-
 function ShrugForm(props) {
-  function handleFormSubmission(event){
-    event.preventDefault();
-    props.onApiCall({
-      priceRange: event.target.priceRange.value,
-      zipCode: event.target.zipCode.value
-    });
-  }
+
   return (
     <div style={ReusableFormStyle}>
       <Form onSubmit={props.formSubmissionHandler}>
         <Form.Group>
           <Form.Control
-            priceRange='$'
+            price='1'
             type='radio'
             defaultValue='checked' />
         </Form.Group>
         <Form.Group>
           <Form.Control
-            priceRange='$$'
+            price='2'
             type='radio' />
         </Form.Group>
         <Form.Group>
           <Form.Control
-            priceRange='$$$'
+            price='3'
             type='radio' />
         </Form.Group>
         <Form.Group>
           <Form.Control
-            zipCode='zipCode'
+            price='4'
+            type='radio' />
+        </Form.Group>
+        <Form.Group>
+          <Form.Control
+            location='location'
             type='text'
-            placeHolder='Zip Code' />
+            placeHolder='City' />
         </Form.Group>
         <Form.Group>
           <Form.Control>
             <br /> <br />
             <Button className='Btn' type='submit'>
-              {" "}{props.buttonText}{" "}
+              {props.buttonText}
             </Button>
           </Form.Control>
         </Form.Group>
@@ -57,7 +55,6 @@ function ShrugForm(props) {
 }
 
 ShrugForm.propTypes = {
-  onApiCall: Proptypes.func,
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string
 };
