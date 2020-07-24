@@ -10,7 +10,14 @@ const ReusableFormStyle = {
   flexWrap: "wrap",
 };
 
-function ReusableForm(props) {
+function ShrugForm(props) {
+  function handleFormSubmission(event){
+    event.preventDefault();
+    props.onApiCall({
+      priceRange: event.target.priceRange.value,
+      zipCode: event.target.zipCode.value
+    });
+  }
   return (
     <div style={ReusableFormStyle}>
       <Form onSubmit={props.formSubmissionHandler}>
@@ -49,9 +56,10 @@ function ReusableForm(props) {
   );
 }
 
-ReusableForm.propTypes = {
+ShrugForm.propTypes = {
+  onApiCall: Proptypes.func,
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string
 };
 
-export default ReusableForm;
+export default ShrugForm;

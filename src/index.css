@@ -59,24 +59,8 @@ input.form-control {
   outline: none;
   box-shadow: 0 2px 4px 0 rgna(0,0,0,0.10);
 }
-button.reusBtn {
-  background-color: #4d0101;
-  color: #f6f6f2;
-  width: auto;
-  font-size: 1.5rem;
-  margin-left: 1%;
-  margin-bottom: 0.5%;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
-  border: none;
-  transition: all .4s ease-in-out;
-  
-}
-button.reusBtn:hover{
-  background-color: green;
-}
-.contlBtn {
+
+.controlBtn {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
@@ -93,7 +77,7 @@ button.reusBtn:hover{
   transition: all .4s ease-in-out;
   
 }
-.contlBtn:hover {
+.controlBtn:hover {
   color: #fff;
   background-color: #286090;
   border-color: #204d74;
