@@ -13,7 +13,10 @@ class ShrugControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      error: null,
+      isLoaded: false,
+      restaurants: []
     };
   }
 
@@ -27,6 +30,10 @@ class ShrugControl extends React.Component {
 handleAddingNewForm = () => {
   this.setState({ formVisibleOnPage: !this.state.formVisibleOnPage });
 };
+
+componentDidMount() {
+  this.makeApiCall()
+}
 
 render() {
   let currentlyVisibleState = null;
@@ -85,8 +92,8 @@ render() {
         </button> */}
       </React.Fragment>
     );
-  }
-}
+  };
+};
 
 ShrugControl.propTypes = {
 };

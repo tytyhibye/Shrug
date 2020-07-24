@@ -11,7 +11,7 @@ function NavBar() {
     firebase.auth().signOut().then(function () {
       console.log("Successfully signed out!");
       setRedirect(null);
-      setRedirect(<Redirect to = '/Splash' />)
+      setRedirect(<Redirect to = '/SignIn' />)
     }).catch(function (error) {
       console.log(error.message);
     });

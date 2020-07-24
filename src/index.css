@@ -1,5 +1,7 @@
 body {
+  background-color: lightsteelblue;
   margin: 0;
+  text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +9,92 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button.searchButton {
+  height: 43px;
+}
+
+form.form-inline{
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.header{
+  text-align: center;
+}
+
+.spash{
+  margin-top: 30%;
+}
+.homeLink{
+  color: rgb(155, 153, 153);
+}
+.homeLink:hover{
+  color: rgb(219, 216, 216);
+}
+.signInLink:hover{
+  color: rgb(219, 216, 216);
+  }
+.signInLink {
+ color: rgb(155, 153, 153);
+}
+.RemList {
+  text-align: center;
+}
+input.form-control {
+  font-family: sans-serif;
+  display: block;
+  margin: auto auto;
+  margin-top: 1%;
+  width: 100%;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 1px solid rgb(70,108,82);
+  font-size: 1.5rem;
+  height: auto;
+  padding: 1%;
+  outline: none;
+  box-shadow: 0 2px 4px 0 rgna(0,0,0,0.10);
+}
+button.reusBtn {
+  background-color: #4d0101;
+  color: #f6f6f2;
+  width: auto;
+  font-size: 1.5rem;
+  margin-left: 1%;
+  margin-bottom: 0.5%;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  border: none;
+  transition: all .4s ease-in-out;
+  
+}
+button.reusBtn:hover{
+  background-color: green;
+}
+.contlBtn {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: #f6f6f2;
+  width: auto;
+  font-size: 1.5rem;
+  margin-top: 2%;
+  margin-left: 1%;
+  margin-bottom: 0.5%;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  border: none;
+  transition: all .4s ease-in-out;
+  
+}
+.contlBtn:hover {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
 }
