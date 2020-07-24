@@ -72,11 +72,12 @@ export default function GetRestaurant() {
     } else {
       currentlyVisibleState = 
       <Result 
-      // restaurant name
-      // restaurant menu
-      // restaurant phone number
-      onClickingReRoll={handleReroll}
-      onClickingSuccess={handleSuccess}/>
+        name={restaurant.name}
+        menu={retaurant.url}
+        phone={restaurant.phone}      
+        onClickingReRoll={handleReroll}
+        onClickingSuccess={handleSuccess}
+      />
       buttonText = "Roll Again";
     }
   }
