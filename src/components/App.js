@@ -14,7 +14,7 @@ function App() {
           <SignIn />
         </Route>
         <Route path='/'>
-          <div className='control'><Control /></div>
+          <div className='Control'><Control /></div>
         </Route>
       </Switch>
     </Router>

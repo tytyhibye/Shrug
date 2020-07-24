@@ -1,8 +1,6 @@
-import React from "react";
-import Form from "./Form";
+import React, { useState, useEffect, useSelector } from "react";
+import ShrugForm from "./ShrugForm";
 import Result from "./Result";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
 import { withFirestore, isLoaded } from "react-redux-firebase";
 import firebase from '../firebase';
 
@@ -10,101 +8,60 @@ const splashStyles = {
   marginTop: '20%'
 }
 
-class Control extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      formVisibleOnPage: false,
-      error: null,
-      isLoaded: false,
-      restaurants: []
-    };
-  }
+export default function GetRestaurant() {
 
-  // handleClick = () => {
-  //   if (this.setState((prevState) => (
-  //     { formVisibleOnPage: !prevState.formVisibleOnPage }
-  //   )));
-  // }
-};
+  const [formVisibleOnPage, setFormVisibleOnPage] = ustState(false);
+  const [error, setError] = useState(null);
 
-handleAddingNewForm = () => {
-  this.setState({ formVisibleOnPage: !this.state.formVisibleOnPage });
-};
+  useEffect(() => {
+    return fetch(`https://api.yelp.com/v3/home.json?api-key=${process.env.REACT_APP_API_KEY}`)
+    .then(response => response.json())
+    .then(
+      (jsonifiedResponse) => {
+        setRestaurant(jsonifiedResponse.restaurant);
+        console.log(jsonifiedResponse.resaurant);
+      })
+      .catch((error) => {
+        setError(error);
+      });
+  }, [])
 
-componentDidMount() {
-  this.makeApiCall()
-};
+  const handleClick = () => {
+    setFormVisibleOnPage(!formVisibleOnPage);
+  };
 
-render() {
   let currentlyVisibleState = null;
   let buttonText = null;
-  const auth = this.props.firebase.auth();
+  const auth = firebase.auth();
 
   if (!isLoaded(auth)) {
-    return (
-      <React.Fragment>
-        <h4>Loading...</h4>
-      </React.Fragment>
-    );
-  }
-  if (isLoaded(auth) && auth.currentUser == null) {
-    console.og(auth.currentUser, "user returning null");
+    return <React.Fragment>Loading...</React.Fragment>;
+  } else if (isLoaded(auth) && auth.currentUser == null) {
+    console.log(auth.currentUser, 'user returning null');
     return (
       <div style={splashStyles}>
-        <h3>
-          Welcome to Shrug
-          <br />
-          <h6>For when you're too hungry to decide where to eat</h6>
-        </h3>
-        <h6>
-          Please <a href="/signIn">sign in</a> to begin
-        </h6>
-      </div>
-    );
-  }
-  if (isLoaded(auth) && auth.currentUser != null) {
-    if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = (
-        <Form
-          onNewSuggestion={this.handleAddingNewForm}
-          onClickingRoll={this.handleYelpApiCall}
-        />
-      );
-    } else if (this.state.selectedRestaurant != null) {
-      currentlyVisibleState =(
-        <Result
-        //result = {returned restaurant from yelp api goes here}
-        onClickingRoll={this.handleYelpApiCall}
-        />
-      );
+        <img src=""/>
+        <h6>Please <a href="/signIn">sign in</a> to begin.</h6>
+      </div>);
+  } else if (isLoaded(auth) && auth.currentUser != null) {
+    if (formVisibleOnPage) {
+      currentlyVisibleState = <ShrugForm onFormSubmission={handleGettingRestaurant}/>
+      buttonText = "Feed Me";
     } else {
-      currentlyVisibleState = (
-        <Splash
-        onClickinglogo={this.handleAddingNewForm}
-        />
-      );
+      currentlyVisibleState = 
+      <Result 
+      restaurant ={restaurant}
+      onClickingReRoll={handleReroll}
+      onClickingSuccess={handleSuccess}/>
+      buttonText = "Roll Again";
     }
-    return (
-      <React.Fragment>
-        {curentlyVisibleState}
-        {/* <button className="contlBtn" onClick={this.handleClick}>
-          {buttonText}
-        </button> */}
-      </React.Fragment>
-    );
-  };
-};
-
-Control.propTypes = {
-};
-
-const mapStateToProps = (state) => {
-  return {
-    formVisibleOnPage: state.formVisibleOnPage
-  };
-};
-
-Control = connect(mapStateToProps)(ProjectControl);
-
-export default withFirestore(ProjectControl);
+  }
+  return (
+    <React.Fragment>
+      {curentlyVisibleState}
+      <buton className="controlBtn" onClick={handleClick}>
+        {buttonText}
+      </buton>
+    </React.Fragment>
+  );
+}
