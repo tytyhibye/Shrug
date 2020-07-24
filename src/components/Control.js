@@ -8,47 +8,43 @@ const splashStyles = {
   marginTop: '20%'
 }
 
-export default function GetRestaurant(props) {
+export default function GetRestaurant() {
 
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
-  const [restaurant, setRestaurant] = useState([]);
+  const [restaurants, setRestaurants] = useState([]);
   const [error, setError] = useState(null);
 
-  useEffect((props) => {
-    const { ShrugForm } = props; 
-      return fetch(`https://api.yelp.com/v3/businesses/search?location=${ShrugForm.location}&price=${ShrugForm.price}`, {
-        method: 'GET',
-        headers: new Headers({
-          'Authorization': 'Bearer' + process.env.YELP_API_KEY,
-          'Content-Type': 'application/json'
+
+  const MakeApiCall = () => {
+    useEffect((props) => {
+      const { ShrugForm } = props; 
+        return fetch(`https://api.yelp.com/v3/businesses/search?location=${ShrugForm.location}&price=${ShrugForm.price}`, {
+          method: 'GET',
+          headers: new Headers({
+            'Authorization': 'Bearer' + process.env.YELP_API_KEY,
+            'Content-Type': 'application/json'
+          })
         })
-      })
-      .then(response => response.json())
-      .then(
-        (jsonifiedResponse) => {
-          setRestaurant(jsonifiedResponse.restaurant);
-          console.log(jsonifiedResponse.resaurant);
-        })
-      .catch((error) => {
-        setError(error);
-      });
-  }, [])
+        .then(response => response.json())
+        .then(
+          (jsonifiedResponse) => {
+            setRestaurants(jsonifiedResponse.restaurants);
+            console.log(jsonifiedResponse.resaurants);
+          })
+        .catch((error) => {
+          setError(error);
+        });
+    }, [])
+  }
 
   const handleClick = () => {
     setFormVisibleOnPage(!formVisibleOnPage);
   };
 
-  const formSubmissionHandler = (event) => {
-      event.preventDefault();
-      props.onApiCall({
-        price: event.target.price.value,
-        location: event.target.location.value
-      });
-    }
 
   const handleReroll = (event) => {
     event.preventDefault();
-    // re-math.random()
+    // math.random()
   }
 
   const handleSuccess = (event) => {
@@ -71,12 +67,14 @@ export default function GetRestaurant(props) {
       </div>);
   } else if (isLoaded(auth) && auth.currentUser != null) {
     if (formVisibleOnPage) {
-      currentlyVisibleState = <ShrugForm onFormSubmission={makeApiCall}/>
+      currentlyVisibleState = <ShrugForm onFormSubmission={MakeApiCall}/>
       buttonText = "Feed Me";
     } else {
       currentlyVisibleState = 
       <Result 
-      // resulted restaurant
+      // restaurant name
+      // restaurant menu
+      // restaurant phone number
       onClickingReRoll={handleReroll}
       onClickingSuccess={handleSuccess}/>
       buttonText = "Roll Again";

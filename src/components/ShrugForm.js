@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { PropTypes } from 'prop-types';
 
-const ReusableFormStyle = {
+const FormStyle = {
   marginTop: "10%",
   display: "flex",
   justifyContent: "center",
@@ -12,43 +12,28 @@ const ReusableFormStyle = {
 function ShrugForm(props) {
 
   return (
-    <div style={ReusableFormStyle}>
+    <div style={FormStyle}>
       <Form onSubmit={props.formSubmissionHandler}>
         <Form.Group>
-          <Form.Control
-            price='1'
-            type='radio'
-            defaultValue='checked' />
+          <Form.Label>Price Range</Form.Label>
+          <Form.Control as='select'>
+            <option price='1'>$</option>
+            <option price='2'>$$</option>
+            <option price='3'>$$$</option>
+            <option price='4'>$$$$</option>
+          </Form.Control>
         </Form.Group>
-        <Form.Group>
-          <Form.Control
-            price='2'
-            type='radio' />
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            price='3'
-            type='radio' />
-        </Form.Group>
-        <Form.Group>
-          <Form.Control
-            price='4'
-            type='radio' />
-        </Form.Group>
+    
         <Form.Group>
           <Form.Control
             location='location'
             type='text'
             placeHolder='City' />
         </Form.Group>
-        <Form.Group>
-          <Form.Control>
-            <br /> <br />
-            <Button className='Btn' type='submit'>
-              {props.buttonText}
-            </Button>
-          </Form.Control>
-        </Form.Group>
+        <br /> <br />
+        <Button className='Btn' type='submit'>
+          {props.buttonText}
+        </Button>
       </Form>
     </div>
   );
