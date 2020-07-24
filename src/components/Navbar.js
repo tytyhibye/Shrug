@@ -22,19 +22,19 @@ function NavBar() {
   return (
     <React.Fragment>
       {redirect}
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar className='navBar' bg="dark" variant="dark" expand="lg">
         <Navbar.Brand href="#home">Shrug</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="https://github.com/tytyhibye/Shrug">Github Repo</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item><Link className="homeLink" to="/">Home</Link></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item onClick={doSignOut}>Sign Out</NavDropdown.Item>
+              <NavDropdown.Item className="outLink" onClick={doSignOut}>Sign Out</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form inline className ='searchBar'>
+          <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button className='searchButton' variant="outline-success">Search</Button>
           </Form>

@@ -10,7 +10,7 @@ const splashStyles = {
 
 export default function GetRestaurant() {
 
-  const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
+  const [formVisibleOnPage, setFormVisibleOnPage] = useState(true);
   const [restaurants, setRestaurants] = useState([]);
   const [error, setError] = useState(null);
 
@@ -44,7 +44,7 @@ export default function GetRestaurant() {
 
   const handleReroll = (event) => {
     event.preventDefault();
-    // math.random()
+    // call math.random function;
   }
 
   const handleSuccess = (event) => {
@@ -68,13 +68,12 @@ export default function GetRestaurant() {
   } else if (isLoaded(auth) && auth.currentUser != null) {
     if (formVisibleOnPage) {
       currentlyVisibleState = <ShrugForm onFormSubmission={MakeApiCall}/>
-      buttonText = "Feed Me";
     } else {
       currentlyVisibleState = 
       <Result 
-        name={restaurant.name}
-        menu={retaurant.url}
-        phone={restaurant.phone}      
+        // name={restaurant.name}
+        // menu={retaurant.url}
+        // phone={restaurant.phone}      
         onClickingReRoll={handleReroll}
         onClickingSuccess={handleSuccess}
       />

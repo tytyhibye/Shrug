@@ -1,6 +1,7 @@
 body {
   background-color: lightsteelblue;
-  margin: 0;
+  margin: 0 auto;
+  padding: 0;
   text-align: center;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -22,18 +23,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.header{
-  text-align: center;
+.navBar{
+  padding: 0;
+}
+.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+  width: 100vw;
+  margin: 0 auto;
 }
 
 .spash{
   margin-top: 30%;
 }
 .homeLink{
-  color: rgb(155, 153, 153);
+  color: rgb(24, 24, 24);
 }
 .homeLink:hover{
-  color: rgb(219, 216, 216);
+  color: rgb(20, 155, 92);
+}
+.outLink{
+  color: rgb(24, 24, 24);
+}
+.outLink:hover{
+  color: rgb(20, 155, 92);
 }
 .signInLink:hover{
   color: rgb(219, 216, 216);
