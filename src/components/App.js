@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './NavBar';
-import ShrugControl from './ShrugControl';
+import Control from './Control';
 import SignIn from './SignIn';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +14,7 @@ function App() {
           <SignIn />
         </Route>
         <Route path='/'>
-          <div className='control'><ShrugControl /></div>
+          <div className='control'><Control /></div>
         </Route>
       </Switch>
     </Router>

@@ -4,12 +4,13 @@ import Result from "./Result";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withFirestore, isLoaded } from "react-redux-firebase";
+import firebase from '../firebase';
 
-const homeStyles = {
+const splashStyles = {
   marginTop: '20%'
 }
 
-class ShrugControl extends React.Component {
+class Control extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +34,7 @@ handleAddingNewForm = () => {
 
 componentDidMount() {
   this.makeApiCall()
-}
+};
 
 render() {
   let currentlyVisibleState = null;
@@ -95,7 +96,7 @@ render() {
   };
 };
 
-ShrugControl.propTypes = {
+Control.propTypes = {
 };
 
 const mapStateToProps = (state) => {
@@ -104,6 +105,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-ShrugControl = connect(mapStateToProps)(ProjectControl);
+Control = connect(mapStateToProps)(ProjectControl);
 
 export default withFirestore(ProjectControl);
