@@ -31,7 +31,7 @@ function ShrugForm(props) {
             placeHolder='City' />
         </Form.Group>
         <br /> <br />
-        <Button className='controlBtn' type='submit'>Feed Me
+        <Button className='formBtn' type='submit'>Feed Me
         </Button>
       </Form>
     </div>

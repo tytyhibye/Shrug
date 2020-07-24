@@ -83,7 +83,7 @@ export default function GetRestaurant() {
   return (
     <React.Fragment>
       {currentlyVisibleState}
-      <buton className="controlBtn" onClick={handleClick}>
+      <buton className="formBtn" onClick={handleClick}>
         {buttonText}
       </buton>
     </React.Fragment>
