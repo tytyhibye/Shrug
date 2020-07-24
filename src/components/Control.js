@@ -38,7 +38,11 @@ export default function GetRestaurant() {
   }
 
   const handleClick = () => {
-    setFormVisibleOnPage(!formVisibleOnPage);
+    if(formVisibleOnPage) {
+      // makeApiCall()
+      setFormVisibleOnPage(!formVisibleOnPage);
+    }
+
   };
 
 

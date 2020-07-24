@@ -23,11 +23,11 @@ function NavBar() {
     <React.Fragment>
       {redirect}
       <Navbar className='navBar' bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">Shrug</Navbar.Brand>
+        <Navbar.Brand>Shrug</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="https://github.com/tytyhibye/Shrug">Github Repo</Nav.Link>
+            <Nav.Link href="https://github.com/tytyhibye/Shrug"><img className='ghIcon' src="https://i.ibb.co/NVrQNnJ/gh-icon-white.png" alt="GitHub Icon"></img></Nav.Link>
             <NavDropdown title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item><Link className="homeLink" to="/">Home</Link></NavDropdown.Item>
               <NavDropdown.Divider />

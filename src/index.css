@@ -35,7 +35,9 @@ code {
   padding: 2%;
   margin: 0 auto;
 }
-
+.ghIcon{
+  height: 30px;
+}
 .spash{
   margin-top: 30%;
 }
@@ -76,7 +78,7 @@ input.form-control {
   box-shadow: 0 2px 4px 0 rgna(0,0,0,0.10);
 }
 
-.formBtn {
+/* .formBtn {
   color: #fff;
   background-color: rgb(70,108,82);
   border-color: rgb(70,108,82);
@@ -97,4 +99,4 @@ input.form-control {
   color: #fff;
   background-color: rgb(106, 165, 125);
   border-color: rgb(106, 165, 125);
-}
+} */

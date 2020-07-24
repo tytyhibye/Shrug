@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Redirect } from 'react-router-dom';
 import firebase from 'firebase/app';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -33,7 +34,7 @@ function SignIn() {
             <input type="password" name="signInPassword" placeholder="Password" />
             <br />
             <br />
-            <button  type="submit">Sign In</button>
+            <Button className='searchButton' variant="outline-success" type="submit">Sign In</Button>
           </form>
         </div>
       </React.Fragment>
