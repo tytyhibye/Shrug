@@ -14,7 +14,13 @@ export default function GetRestaurant() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    return fetch(`https://api.yelp.com/v3/home.json?api-key=${process.env.REACT_APP_API_KEY}`)
+    return fetch(`https://api.yelp.com/v3/businesses/search?location=${restaurant.location}&price=${restaurant.price}`, {
+      method: 'GET',
+      headers: new Headers({
+        'Authorization': 'Bearer' + process.env.YELP_API_KEY,
+        'Content-Type': 'application/json'
+      })
+    })
     .then(response => response.json())
     .then(
       (jsonifiedResponse) => {
