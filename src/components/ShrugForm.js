@@ -13,14 +13,15 @@ function ShrugForm(props) {
 
   return (
     <div style={FormStyle}>
-      <Form onSubmit={props.formSubmissionHandler}>
+      <Form className='formStyle' onSubmit={props.formSubmissionHandler}>
         <Form.Group>
-          <Form.Label>Price Range</Form.Label>
-          <Form.Control as='select'>
-            <option price='1'>$</option>
-            <option price='2'>$$</option>
-            <option price='3'>$$$</option>
-            <option price='4'>$$$$</option>
+          <Form.Label><h4>Hungry huh? Let's find you something to eat</h4></Form.Label>
+          <Form.Control classname='formDrop' as='select'>
+              <option price='1'>Select a Price Range</option>
+              <option price='1'>$</option>
+              <option price='2'>$$</option>
+              <option price='3'>$$$</option>
+              <option price='4'>$$$$</option>
           </Form.Control>
         </Form.Group>
     
