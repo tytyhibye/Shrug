@@ -44,6 +44,11 @@ function SignIn() {
           >
             Sign In
           </Button>
+          <br />
+          <br />
+          <h6>
+            Not registered? Sign up <a href="/signUp">here</a>
+          </h6>
         </form>
       </div>
     </React.Fragment>
