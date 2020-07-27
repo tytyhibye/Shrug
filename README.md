@@ -2,49 +2,53 @@
 <br />
 
 #### By Tyler Bates
+
 <hr/>
 
 ## Proposal
 
 A React Web application for a restuarant suggestion generator. <br>
-The user signs in and is prompted to input their price range and zip code. The application will then return a restaurant within the parameters of the user inputs. 
+The user signs in and is prompted to input their price range and zip code. The application will then return a restaurant within the parameters of the user inputs.
+
 <hr />
 
 ## Component Diagrams
+
 ### App Design
+
 <img src='./public/component-diagram.drawio.png'>
 
 ### Card Design
+
 <img src='./public/card-diagram.drawio.png'>
 
 <hr/>
 
 ## Logistics
 
-||Minimum Product Features|
-|-----|-----|
-| :heavy_check_mark: |User can register|
-| :heavy_check_mark: |User can log in with registered email and password|
-| :heavy_check_mark: |User can log out from navigation menu|
-| :heavy_check_mark: |User can access the projects github repository from navigation menu|
-|  |User can input preferred price range and zip code|
-|  |Results card will output random restaurant within parameters|
-|  |Results card will include GoogleMap pinned location of restaurant|
-|  |User can re-roll if not satisfied with output restaurant|
+|                    | Minimum Product Features                                            |
+| ------------------ | ------------------------------------------------------------------- |
+| :heavy_check_mark: | User can register                                                   |
+| :heavy_check_mark: | User can log in with registered email and password                  |
+| :heavy_check_mark: | User can log out from navigation menu                               |
+| :heavy_check_mark: | User can access the projects github repository from navigation menu |
+| :heavy_check_mark: | User can input preferred price range and zip code                   |
+|                    | Results card will output random restaurant within parameters        |
+|                    | Results card will include GoogleMap pinned location of restaurant   |
+|                    | User can re-roll if not satisfied with output restaurant            |
 
 <br/>
 <br/>
 
-||Stretch Goals|
-|-----|-----|
-| :heavy_check_mark: |Clean, Responsive UI|
-|  |Adding results to database to prevent duplicate results|
-|  |Using IBM Watson API for chatbot interactivity|
-|  |Search functionality for restaurants in general area|
-|  |Hosting|
+|                    | Stretch Goals                                           |
+| ------------------ | ------------------------------------------------------- |
+| :heavy_check_mark: | Clean, Responsive UI                                    |
+|                    | Adding results to database to prevent duplicate results |
+|                    | Using IBM Watson API for chatbot interactivity          |
+|                    | Search functionality for restaurants in general area    |
+|                    | Hosting                                                 |
 
 <hr />
-
 
 ## Setup/Installation Requirements
 
@@ -57,22 +61,27 @@ The user signs in and is prompted to input their price range and zip code. The a
 ```
 $ cd ~/shrug-js
 ```
+
 4. Within the projects directory install all required dependencies with
+
 ```
 $ npm install
 ```
+
 5. Run the application to view in your browser with
+
 ```
 $ npm run start
 ```
 
->If the browser does not automatically launch, view the project [here](https://localhost:3000)
+> If the browser does not automatically launch, view the project [here](https://localhost:3000)
 
 <hr/>
 
 ## Known Bugs
 
 ### There are no known bugs at this time
+
 If you have a bug or an idea, browse the open issues before opening a new one. You can also take a look at the [Open Source Guide](https://opensource.guide/).
 
 <hr/>
