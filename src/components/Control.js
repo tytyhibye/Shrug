@@ -4,10 +4,13 @@ import ShrugForm from "./ShrugForm";
 // import Result from "./Result";
 import { withFirestore, isLoaded } from "react-redux-firebase";
 import firebase from "../firebase";
-// import PropTypes from "prop-types";
 
 const splashStyles = {
   marginTop: "20%",
+};
+
+const splashImg = {
+  width: "400px",
 };
 
 function GetRestaurant(props) {
@@ -16,11 +19,10 @@ function GetRestaurant(props) {
   const [error, setError] = useState(null);
 
   const makeApiCall = async (call) => {
-    console.log("inside api call");
-    // console.log("api props" + call);
+    console.log("API-KEY", process.env.GOOGLE_API_KEY);
    
     await fetch(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${call.location}&radius=500&types=restaurant&price_level=${call.price}&key=${process.env.GOOGLE_API_KEY}`,
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?price_level=${call.price}&types=restaurant&location=${call.location}&radius=4000&key=${process.env.GOOGLE_API_KEY}`,
       {
         mode: 'no-cors'
       }
@@ -76,7 +78,7 @@ function GetRestaurant(props) {
     console.log(auth.currentUser, "user returning null");
     return (
       <div style={splashStyles}>
-        <img src="" />
+        <img style={splashImg} src="https://iili.io/dAwz3x.png" />
         <h6>
           Please <a href="/signIn">sign in</a> to begin.
         </h6>
@@ -118,8 +120,5 @@ function GetRestaurant(props) {
   );
 }
 
-// GetRestaurant.propTypes = {
-//   makeApiCall: PropTypes.func
-// };
 
 export default GetRestaurant;

@@ -5,6 +5,11 @@ import firebase from "firebase/app";
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const navImg = {
+  width: "75px",
+};
+
+
 function NavBar() {
   const [redirect, setRedirect] = useState(null);
   function doSignOut() {
@@ -25,7 +30,7 @@ function NavBar() {
     <React.Fragment>
       {redirect}
       <Navbar className="navBar" bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand>Shrug</Navbar.Brand>
+        <Navbar.Brand><img style={navImg} src="https://iili.io/dAwz3x.png" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">

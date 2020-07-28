@@ -18,6 +18,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 
+.splashStyles {
+  margin-top: 20%;
+};
+
+.splashImg {
+  width: 200px;
+}; */
+
 button.searchButton {
   height: 43px;
 }

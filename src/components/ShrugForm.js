@@ -7,8 +7,10 @@ const FormStyle = {
   marginTop: "10%",
   display: "flex",
   justifyContent: "center",
-  alignItems: "flex-start",
-  flexWrap: "wrap",
+};
+
+const InlineFormStyle = {
+  margin: "0 auto",
 };
 
 
@@ -32,7 +34,7 @@ function ShrugForm(props) {
           <Form.Label>
             <h4>Hungry huh? Let's find you something to eat</h4>
           </Form.Label>
-          <Form.Control onChange={handlePriceChange} className="formDrop" as="select">
+          <Form.Control style={InlineFormStyle} onChange={handlePriceChange} className="formDrop" as="select">
             <option value = "1" >Select a Price Range</option>
             <option value = "1" >$</option>
             <option value = "2" >$$</option>
@@ -41,7 +43,7 @@ function ShrugForm(props) {
           </Form.Control>
         </Form.Group>
         <Form.Group>
-          <Form.Control onChange={handleLocationChange} className="formDrop" as="select">
+          <Form.Control style={InlineFormStyle} onChange={handleLocationChange} className="formDrop" as="select">
             <option value = "45.523064, -122.676483">Select a City</option>
             <option value = "45.523064, -122.676483">Portland</option>
             <option value = "47.608013, -122.335167">Seattle</option>

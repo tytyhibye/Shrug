@@ -1,4 +1,4 @@
-![](https://i.ibb.co/5F5dD37/logo-cap.jpg)
+![](src\Assets\shrug.png)
 <br />
 
 #### By Tyler Bates
@@ -16,11 +16,11 @@ The user signs in and is prompted to input their price range and zip code. The a
 
 ### App Design
 
-<img src='./public/component-diagram.drawio.png'>
+<img src='src\Assets\component-diagram.drawio.png'>
 
 ### Card Design
 
-<img src='./public/card-diagram.drawio.png'>
+<img src='src\Assets\card-diagram.drawio.png'>
 
 <hr/>
 
