@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useSelector } from "react";
+import React, { useState } from "react";
 import ShrugForm from "./ShrugForm";
 // import { Button } from "react-bootstrap";
 // import Result from "./Result";
@@ -15,21 +15,21 @@ const splashImg = {
 
 function GetRestaurant(props) {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(true);
-  const [restaurants, setRestaurants] = useState([]);
+  const [restaurant, setRestaurants] = useState([]);
   const [error, setError] = useState(null);
 
   const makeApiCall = async (call) => {
-    console.log("API-KEY", process.env.GOOGLE_API_KEY);
+    console.log("fetch success");
    
     await fetch(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?price_level=${call.price}&types=restaurant&location=${call.location}&radius=4000&key=${process.env.GOOGLE_API_KEY}`,
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?price_level=${call.price}&types=restaurant&location=${call.location}&radius=4000&key=${process.env.REACT_APP_GOOGLE_API_KEY}`,
       {
         mode: 'no-cors'
       }
     )
     .then((response) => response.json())
     .then((jsonifiedResponse) => {
-      setRestaurants(jsonifiedResponse.restaurants);
+      setRestaurants(jsonifiedResponse.restaurant);
       console.log(jsonifiedResponse.resaurants);
     })
     .catch((error) => {

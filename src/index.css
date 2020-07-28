@@ -57,11 +57,12 @@ code {
   margin: 0 auto;
 }
 .ghIcon {
-  height: 30px;
+  height: 15px;
   color: rgb(48, 50, 53);
 }
 .ghIcon:hover {
-  color: rgb(235, 235, 235);
+  color: rgb(60, 140, 214);
+  text-decoration-line: none;
 }
 .spash {
   margin-top: 30%;
@@ -71,12 +72,14 @@ code {
 }
 .homeLink:hover {
   color: rgb(20, 155, 92);
+  text-decoration-line: none;
 }
 .outLink {
   color: rgb(24, 24, 24);
 }
 .outLink:hover {
-  color: rgb(20, 155, 92);
+  color: rgb(192, 41, 41);
+  text-decoration-line: none;
 }
 .signInLink:hover {
   color: rgb(219, 216, 216);

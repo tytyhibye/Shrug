@@ -34,22 +34,29 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="https://github.com/tytyhibye/Shrug">
+            {/* <Nav.Link href="https://github.com/tytyhibye/Shrug">
               <img
                 className="ghIcon"
                 src="https://i.ibb.co/NVrQNnJ/gh-icon-white.png"
                 alt="GitHub Icon"
               ></img>
-            </Nav.Link>
+            </Nav.Link> */}
             <NavDropdown title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item>
                 <Link className="homeLink" to="/">
                   Home
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
               <NavDropdown.Item className="outLink" onClick={doSignOut}>
                 Sign Out
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item>
+                <Link className="ghIcon" href="https://github.com/tytyhibye/Shrug">
+                <img
+                className="ghIcon"
+                src="https://i.ibb.co/gyGGjwz/githubicon.png" alt="github icon"/>    Project Repo
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
