@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useSelector } from "react";
 import ShrugForm from "./ShrugForm";
-import { Button } from "react-bootstrap";
-import Result from "./Result";
+// import { Button } from "react-bootstrap";
+// import Result from "./Result";
 import { withFirestore, isLoaded } from "react-redux-firebase";
 import firebase from "../firebase";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const splashStyles = {
   marginTop: "20%",
@@ -12,33 +12,27 @@ const splashStyles = {
 
 function GetRestaurant(props) {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(true);
-  // const [restaurants, setRestaurants] = useState([]);
-  // const [error, setError] = useState(null);
+  const [restaurants, setRestaurants] = useState([]);
+  const [error, setError] = useState(null);
 
-  const makeApiCall = async (props) => {
+  const makeApiCall = async (call) => {
     console.log("inside api call");
-    console.log("api props" + props);
-    let response = await fetch(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${props.location}&radius=500&types=restaurant&price_level=${props.price}&key=${process.env.GOOGLE_API_KEY}`,
+    // console.log("api props" + call);
+   
+    await fetch(
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${call.location}&radius=500&types=restaurant&price_level=${call.price}&key=${process.env.GOOGLE_API_KEY}`,
       {
-        mode: 'no-cors',
-        method: "GET",
-        headers: new Headers({
-          "Content-Type": "application/json",
-        }),
+        mode: 'no-cors'
       }
     )
-    let data = await response.json();
-
-    console.log(data);
-      // .then((response) => response.json())
-      // .then((jsonifiedResponse) => {
-      //   setRestaurants(jsonifiedResponse.restaurants);
-      //   console.log(jsonifiedResponse.resaurants);
-      // })
-      // .catch((error) => {
-      //   setError(error);
-      // });
+    .then((response) => response.json())
+    .then((jsonifiedResponse) => {
+      setRestaurants(jsonifiedResponse.restaurants);
+      console.log(jsonifiedResponse.resaurants);
+    })
+    .catch((error) => {
+      setError(error);
+    });
   };
 
   // const handleClick = (event) => {
@@ -49,14 +43,15 @@ function GetRestaurant(props) {
   //   }
   // };
 
-  const formSubmissionHandler = (event) => {
-    event.preventDefault();
-    console.log(props);
-    props.makeApiCall({
-      price: event.target.price.value,
-      location: event.target.location.value,
+  const formSubmissionHandler = (e, price, location) => {
+    console.log("INSIDE FORM SUBMISSION" , e, price, location);
+    e.preventDefault();
+    makeApiCall({
+      price: price,
+      location: location,
     });
     setFormVisibleOnPage(!formVisibleOnPage);
+    return false;
   }
 
   
@@ -123,8 +118,8 @@ function GetRestaurant(props) {
   );
 }
 
-GetRestaurant.propTypes = {
-  makeApiCall: PropTypes.func
-};
+// GetRestaurant.propTypes = {
+//   makeApiCall: PropTypes.func
+// };
 
 export default GetRestaurant;

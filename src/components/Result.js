@@ -11,7 +11,6 @@
 //       <h6>{restaurant.vicinity}</h6>
 //       <p>{restaurant.html_attributions}</p>
 //       <br />
-//       <button onclick={props.onClickingSuccess}>Thumbs Up</button>
 //       <button onClick={props.onClickingReroll}>Thumbs Down</button>
 //     </React.Fragment>
 //   );
