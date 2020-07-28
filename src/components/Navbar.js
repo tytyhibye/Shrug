@@ -2,14 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import firebase from "firebase/app";
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Form, FormControl, Button, } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function NavBar() {

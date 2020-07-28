@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./NavBar";
+import NavBar from "./NavBar";
 import Control from "./Control";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <div className="navBar">
-        <Navbar />
+        <NavBar />
       </div>
       <Switch>
         <Route path="/signIn">
