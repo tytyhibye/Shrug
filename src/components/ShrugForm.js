@@ -1,6 +1,8 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { PropTypes } from "prop-types";
+
+
 const FormStyle = {
   marginTop: "10%",
   display: "flex",
@@ -14,7 +16,7 @@ function ShrugForm(props) {
   console.log(props)
   return (
     <div style={FormStyle}>
-      <Form className="formStyle" onSubmit={props.formSubmissionHandler}>
+      <Form className="formStyle" onSubmit={props.onFormSubmission}>
         <Form.Group>
           <Form.Label>
             <h4>Hungry huh? Let's find you something to eat</h4>
@@ -36,7 +38,6 @@ function ShrugForm(props) {
         </Form.Group>
         <br /><br />
         <Button
-          onClick={props.handleClick}
           className="searchButton"
           variant="outline-success"
           type="submit"
@@ -49,8 +50,7 @@ function ShrugForm(props) {
 }
 
 ShrugForm.propTypes = {
-  formSubmissionHandler: PropTypes.func,
-  buttonText: PropTypes.string,
+  onFormSubmission: PropTypes.func,
 };
 
 export default ShrugForm;

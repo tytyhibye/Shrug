@@ -8,8 +8,8 @@
 //     <React.Fragment>
 //       <h1>Let's Eat Here!</h1>
 //       <h4>{restaurant.name}</h4>
-//       <h6>Online Menu: {restaurant.url}</h6>
-//       <h6>Call {restaurant.phone} to make a reservation</h6>
+//       <h6>{restaurant.vicinity}</h6>
+//       <p>{restaurant.html_attributions}</p>
 //       <br />
 //       <button onclick={props.onClickingSuccess}>Thumbs Up</button>
 //       <button onClick={props.onClickingReroll}>Thumbs Down</button>
