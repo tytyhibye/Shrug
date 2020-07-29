@@ -33,9 +33,9 @@ The user signs in and is prompted to input their price range and zip code. The a
 | :heavy_check_mark: | User can log out from navigation menu                               |
 | :heavy_check_mark: | User can access the projects github repository from navigation menu |
 | :heavy_check_mark: | User can input preferred price range and zip code                   |
-|                    | Results card will output random restaurant within parameters        |
+| :heavy_check_mark: | Results card will output random restaurant within parameters        |
+| :heavy_check_mark: | User can re-roll if not satisfied with output restaurant            |
 |                    | Results card will include GoogleMap pinned location of restaurant   |
-|                    | User can re-roll if not satisfied with output restaurant            |
 
 <br/>
 <br/>
