@@ -30,15 +30,15 @@ function GetRestaurant(props) {
 
   const makeApiCall = async (call) => {
     console.log("fetch success");
-    console.log(setResult);
     setResult( "HOOK STATE BEFORE FETCH"
-    // <React.Fragment style={spinnerz}>
+    // <div style={spinnerz}>
     //   <Spinner color="success" />
     //   <Spinner color="danger" />
     //   <Spinner color="warning" />
     //   <Spinner color="info" />
-    // </React.Fragment>
+    // </div>
     );
+    console.log(showResult);
     
     let response;
    try {
@@ -56,14 +56,14 @@ function GetRestaurant(props) {
   }
     let restaurantList = data.results.map( ele => {
       return {name: ele.name, rating: ele.rating, vicinity: ele.vicinity, location: ele.geometry.location}
-      });
+    });
     setResult(restaurantList);
     console.log(showResult, "HOOK STATE AFTER FETCH");
 
     // .then(response => response.json())
     // .then((jsonifiedResponse) => {
       // console.log(jsonifiedResponse.results)
-      // setContent(jsonifiedResponse.results)
+      // setResult(jsonifiedResponse.results)
      
       
   //   })
@@ -71,19 +71,11 @@ function GetRestaurant(props) {
   //     console.log(error.message);
   //   })
 
-  //   console.log(showResult)
   };
 
-  // const handleClick = (event) => {
-  //   event.preventDefault();
-  //   if (formVisibleOnPage) {
-  //     // makeApiCall();
-  //     setFormVisibleOnPage(!formVisibleOnPage);
-  //   }
-  // };
+
 
   const formSubmissionHandler = (e, price, location) => {
-    console.log("INSIDE FORM SUBMISSION" , e, price, location);
     e.preventDefault();
     makeApiCall({
       price: price,
@@ -106,11 +98,10 @@ function GetRestaurant(props) {
   // };
 
   let currentlyVisibleState = null;
-  // let buttonText = null;
   const auth = firebase.auth();
 
   if (!isLoaded(auth)) {
-    return <React.Fragment>Loading...</React.Fragment>;
+    return <div>Loading...</div>;
   } else if (isLoaded(auth) && auth.currentUser == null) {
     console.log(auth.currentUser, "user returning null");
     return (
@@ -124,22 +115,22 @@ function GetRestaurant(props) {
   } else if (isLoaded(auth) && auth.currentUser != null) {
     if (formVisibleOnPage) {
       currentlyVisibleState = <ShrugForm onFormSubmission={formSubmissionHandler} />
-      console.log("form loaded");
     } else {
-      currentlyVisibleState =
-      <Result>
-        {console.log('results page render:', showResult)}
+      currentlyVisibleState = (
+        console.log('results page values:', showResult)
+      )
+      // <Result>
           {/* // name={jsonifiedResponse.name}
           // address={restaurant.vicinity}
           // map={restaurant.html_attributions} */}
         {/* {showResult} */}
-      </Result>
+      // </Result>
     }
   }
   return (
-    <React.Fragment>
+    <div>
       {currentlyVisibleState}
-    </React.Fragment>
+    </div>
   );
 }
 

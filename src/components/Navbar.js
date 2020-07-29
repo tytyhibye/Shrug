@@ -26,6 +26,10 @@ function NavBar() {
       });
   }
 
+  function gitHubRepo() {
+    window.location ='https://github.com/tytyhibye/Shrug';
+  }
+
   return (
     <React.Fragment>
       {redirect}
@@ -52,11 +56,11 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
-                <a className="ghIcon" href="https://github.com/tytyhibye/Shrug">
+                <Link className="ghIcon" onClick={()=>gitHubRepo()}>
                 <img
                 className="ghIcon"
                 src="https://i.ibb.co/gyGGjwz/githubicon.png" alt="github icon"/>    Project Repo
-                </a>
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
