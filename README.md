@@ -1,4 +1,4 @@
-![](src\Assets\shrug.png)
+![](https://iili.io/dAwz3x.png)
 <br />
 
 #### By Tyler Bates
