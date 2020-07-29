@@ -22,24 +22,20 @@ function GetRestaurant(props) {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(true);
   // const [restaurant, setRestaurants] = useState(null);
   // const [error, setError] = useState(null);
-  const [showResult, setResult] = useState([]);
+  const [showResult, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  // const setContent = (content) => {
-  //   setResult(content);
-  // }
-
+  let loadingScreen = (
+    <div style={spinnerz}>
+      <Spinner color="success" />
+      <Spinner color="danger" />
+      <Spinner color="warning" />
+      <Spinner color="info" />
+    </div>
+  )
   const makeApiCall = async (call) => {
     console.log("fetch success");
-    setResult( "HOOK STATE BEFORE FETCH"
-    // <div style={spinnerz}>
-    //   <Spinner color="success" />
-    //   <Spinner color="danger" />
-    //   <Spinner color="warning" />
-    //   <Spinner color="info" />
-    // </div>
-    );
-    console.log(showResult);
-    
+    setLoading(true);
     let response;
    try {
     response = await fetch(
@@ -58,14 +54,12 @@ function GetRestaurant(props) {
       return {name: ele.name, rating: ele.rating, vicinity: ele.vicinity, location: ele.geometry.location}
     });
     setResult(restaurantList);
-    console.log(showResult, "HOOK STATE AFTER FETCH");
+    setLoading(false);
 
     // .then(response => response.json())
     // .then((jsonifiedResponse) => {
       // console.log(jsonifiedResponse.results)
       // setResult(jsonifiedResponse.results)
-     
-      
   //   })
   //   .catch((error) => {
   //     console.log(error.message);
@@ -99,9 +93,11 @@ function GetRestaurant(props) {
 
   let currentlyVisibleState = null;
   const auth = firebase.auth();
-
+  if (loading) {
+    return loadingScreen;
+  }
   if (!isLoaded(auth)) {
-    return <div>Loading...</div>;
+    return loadingScreen;
   } else if (isLoaded(auth) && auth.currentUser == null) {
     console.log(auth.currentUser, "user returning null");
     return (
@@ -115,16 +111,8 @@ function GetRestaurant(props) {
   } else if (isLoaded(auth) && auth.currentUser != null) {
     if (formVisibleOnPage) {
       currentlyVisibleState = <ShrugForm onFormSubmission={formSubmissionHandler} />
-    } else {
-      currentlyVisibleState = (
-        console.log('results page values:', showResult)
-      )
-      // <Result>
-          {/* // name={jsonifiedResponse.name}
-          // address={restaurant.vicinity}
-          // map={restaurant.html_attributions} */}
-        {/* {showResult} */}
-      // </Result>
+    } else if(!!showResult) {
+      currentlyVisibleState = <Result resultList={showResult} />
     }
   }
   return (

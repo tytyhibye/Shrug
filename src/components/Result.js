@@ -1,38 +1,35 @@
-// import React from 'react';
-// import { Button } from 'react-bootstrap';
-// import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 
-// const Result = (props) => {
+
+const Result = ({resultList}) => {
+
+  const[pick, setPick] = useState(resultList[Math.floor(Math.random() * resultList.length)]);
   
-//   console.log(props, "MAIN RESULT FUNCTION PROPS");
+  console.log(resultList, "MAIN RESULT FUNCTION resultList");
 
-//   const restaurant = (resultList) => {
-//     console.log(resultList, "RESTAURANT PROPS/JSONIFIED RESPONSE");
-//     const pick = resultList[Math.floor(Math.random() * resultList.length)];
-//     console.log(pick, "END RESULT")
-//     return pick;
-//   }
-//   return (
-//     <React.Fragment>
-//       {restaurant()}
-//       {console.log(restaurant.pick)}
-//       <h1>Let's Eat Here!</h1>
-//       <h4>{restaurant.pick.name}</h4>
-//       <h6>{restaurant.pick.vicinity}</h6>
-//       <p>{restaurant.pick.html_attributions}</p>
-//       <Button
-//         onClick={props.restaurant()}
-//         className="searchButton"
-//         variant="outline-success"
-//         >
-//         Roll Again
-//       </Button>
-//     </React.Fragment>
-//   );
-// }
+  const restaurant = () => {
+    console.log(resultList, "RESTAURANT resultList/JSONIFIED RESPONSE");
+    setPick(resultList[Math.floor(Math.random() * resultList.length)]);
+    console.log(pick, "END RESULT")
+  }
+  return (
+    <React.Fragment>
+      <h1>Let's Eat Here!</h1>
+      <h4>{pick.name}</h4>
+       <h6>{pick.rating}</h6>
+       <h6>{pick.vicinity}</h6>
+       {/* <p>{pick.location}</p> */}
+      <Button
+        onClick={()=>restaurant()}
+        className="searchButton"
+        variant="outline-success"
+        >
+        Roll Again
+      </Button>
+    </React.Fragment>
+  );
+}
 
-// Result.propTypes = {
-//   onClick: PropTypes.func,
-// };
 
-// export default Result;
+export default Result;
