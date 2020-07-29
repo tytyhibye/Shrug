@@ -24,6 +24,11 @@ function GetRestaurant(props) {
   // const [error, setError] = useState(null);
   const [showResult, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const toggleResult = () => {
+    setShow(true);
+  };
 
   let loadingScreen = (
     <div style={spinnerz}>
@@ -55,6 +60,7 @@ function GetRestaurant(props) {
     });
     setResult(restaurantList);
     setLoading(false);
+    setShow(true);
 
     // .then(response => response.json())
     // .then((jsonifiedResponse) => {
@@ -112,7 +118,9 @@ function GetRestaurant(props) {
     if (formVisibleOnPage) {
       currentlyVisibleState = <ShrugForm onFormSubmission={formSubmissionHandler} />
     } else if(!!showResult) {
-      currentlyVisibleState = <Result resultList={showResult} />
+      currentlyVisibleState = <Result resultList={showResult} getModal={toggleResult}/>
+    
+    
     }
   }
   return (
