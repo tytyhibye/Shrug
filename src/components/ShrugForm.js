@@ -45,9 +45,9 @@ function ShrugForm(props) {
         </Form.Group>
         <Form.Group>
           <Form.Control style={InlineFormStyle} onChange={handleLocationChange} className="formDrop" as="select">
-            <option value = "45.523064, -122.676483">Select a City</option>
-            <option value = "45.523064, -122.676483">Portland</option>
-            <option value = "47.608013, -122.335167">Seattle</option>
+            <option value = "45.523064,-122.676483">Select a City</option>
+            <option value = "45.523064,-122.676483">Portland</option>
+            <option value = "47.608013,-122.335167">Seattle</option>
           </Form.Control>
         </Form.Group>
         <br /><br />

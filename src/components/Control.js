@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import ReactDom from "react-dom";
 import ShrugForm from "./ShrugForm";
-// import { Button } from "react-bootstrap";
-// import Result from "./Result";
+import { Spinner } from "react-bootstrap";
+import Result from "./Result";
 import { withFirestore, isLoaded } from "react-redux-firebase";
 import firebase from "../firebase";
 
@@ -13,28 +14,48 @@ const splashImg = {
   width: "400px",
 };
 
+const spinnerz = {
+  margin: "0 auto",
+}
+
 function GetRestaurant(props) {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(true);
-  const [restaurant, setRestaurants] = useState([]);
-  const [error, setError] = useState(null);
+  // const [restaurant, setRestaurants] = useState(null);
+  // const [error, setError] = useState(null);
+  const [showResult, loadContent] = useState([]);
+
+  const setContent = (content) => {
+    loadContent(content);
+  }
 
   const makeApiCall = async (call) => {
     console.log("fetch success");
+    loadContent(
+    <React.Fragment style={spinnerz}>
+      <Spinner color="success" />
+      <Spinner color="danger" />
+      <Spinner color="warning" />
+      <Spinner color="info" />
+    </React.Fragment>
+    );
+        
+    console.log(call.price, call.location);
    
-    await fetch(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?price_level=${call.price}&types=restaurant&location=${call.location}&radius=4000&key=${process.env.REACT_APP_GOOGLE_API_KEY}`,
-      {
-        mode: 'no-cors'
-      }
+    fetch(
+      `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?price_level=${call.price}&types=restaurant&location=${call.location}&radius=4000&key=${process.env.REACT_APP_GOOGLE_API_KEY}`,
     )
-    .then((response) => response.json())
+    .then(response => response.json())
     .then((jsonifiedResponse) => {
-      setRestaurants(jsonifiedResponse.restaurant);
-      console.log(jsonifiedResponse.resaurants);
+      console.log(jsonifiedResponse.results)
+      // setContent(jsonifiedResponse.results)
+     
+      
     })
     .catch((error) => {
-      setError(error);
-    });
+      console.log(error.message);
+    })
+
+    console.log(showResult)
   };
 
   // const handleClick = (event) => {
@@ -89,33 +110,19 @@ function GetRestaurant(props) {
       currentlyVisibleState = <ShrugForm onFormSubmission={formSubmissionHandler} />
       console.log("form loaded");
     } else {
-      currentlyVisibleState = (
-        console.log('results page goes here')
-        // <Result
-        //   // name={restaurant.name}
-        //   // address={restaurant.vicinity}
-        //   // map={restaurant.html_attributions}
-        // />
-      );
-      // <Button
-      //     onClick={handleClick}
-      //     className="searchButton"
-      //     variant="outline-success"
-      //     >
-      //    Roll Again
-      //   </Button>
+      currentlyVisibleState =
+      <Result>
+        {console.log('results page goes here')}
+          {/* // name={jsonifiedResponse.name}
+          // address={restaurant.vicinity}
+          // map={restaurant.html_attributions} */}
+        {showResult}
+      </Result>
     }
   }
   return (
     <React.Fragment>
       {currentlyVisibleState}
-      {/* <Button
-          onClick={handleClick}
-          className="searchButton"
-          variant="outline-success"
-          >
-         {buttonText}
-        </Button> */}
     </React.Fragment>
   );
 }

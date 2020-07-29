@@ -52,11 +52,11 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
-                <Link className="ghIcon" href="https://github.com/tytyhibye/Shrug">
+                <a className="ghIcon" href="https://github.com/tytyhibye/Shrug">
                 <img
                 className="ghIcon"
                 src="https://i.ibb.co/gyGGjwz/githubicon.png" alt="github icon"/>    Project Repo
-                </Link>
+                </a>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

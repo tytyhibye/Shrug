@@ -1,25 +1,38 @@
 // import React from 'react';
+// import { Button } from 'react-bootstrap';
 // import PropTypes from 'prop-types';
 
 // const Result = (props) => {
-//   const { resultList} = props;
-//   const restaurant = resultList[Math.floor(Math.random() * resultList.length)];
+  
+//   console.log(props, "MAIN RESULT FUNCTION PROPS");
+
+//   const restaurant = (resultList) => {
+//     console.log(resultList, "RESTAURANT PROPS/JSONIFIED RESPONSE");
+//     const pick = resultList[Math.floor(Math.random() * resultList.length)];
+//     console.log(pick, "END RESULT")
+//     return pick;
+//   }
 //   return (
 //     <React.Fragment>
+//       {restaurant()}
+//       {console.log(restaurant.pick)}
 //       <h1>Let's Eat Here!</h1>
-//       <h4>{restaurant.name}</h4>
-//       <h6>{restaurant.vicinity}</h6>
-//       <p>{restaurant.html_attributions}</p>
-//       <br />
-//       <button onClick={props.onClickingReroll}>Thumbs Down</button>
+//       <h4>{restaurant.pick.name}</h4>
+//       <h6>{restaurant.pick.vicinity}</h6>
+//       <p>{restaurant.pick.html_attributions}</p>
+//       <Button
+//         onClick={props.restaurant()}
+//         className="searchButton"
+//         variant="outline-success"
+//         >
+//         Roll Again
+//       </Button>
 //     </React.Fragment>
 //   );
-
-
 // }
+
 // Result.propTypes = {
-//   onClickingSuccess: PropTypes.func,
-//   onClickingReroll: PropTypes.func
-// }
+//   onClick: PropTypes.func,
+// };
 
 // export default Result;
