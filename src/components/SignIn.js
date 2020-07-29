@@ -22,6 +22,7 @@ function SignIn() {
         setRedirect(<Redirect to="/" />);
       })
       .catch(function (error) {
+        
         console.log(error.message);
       });
   }

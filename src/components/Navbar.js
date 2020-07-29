@@ -12,6 +12,7 @@ const navImg = {
 
 function NavBar() {
   const [redirect, setRedirect] = useState(null);
+  const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   function doSignOut() {
     firebase
       .auth()
@@ -38,16 +39,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {/* <Nav.Link href="https://github.com/tytyhibye/Shrug">
-              <img
-                className="ghIcon"
-                src="https://i.ibb.co/NVrQNnJ/gh-icon-white.png"
-                alt="GitHub Icon"
-              ></img>
-            </Nav.Link> */}
             <NavDropdown title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item>
-                <Link className="homeLink" to="/">
+                <Link className="homeLink" to="/" onClick={()=>setFormVisibleOnPage(!!formVisibleOnPage)}>
                   Home
                 </Link>
               </NavDropdown.Item>
