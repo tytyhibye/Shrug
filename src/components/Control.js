@@ -22,40 +22,56 @@ function GetRestaurant(props) {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(true);
   // const [restaurant, setRestaurants] = useState(null);
   // const [error, setError] = useState(null);
-  const [showResult, loadContent] = useState([]);
+  const [showResult, setResult] = useState([]);
 
-  const setContent = (content) => {
-    loadContent(content);
-  }
+  // const setContent = (content) => {
+  //   setResult(content);
+  // }
 
   const makeApiCall = async (call) => {
     console.log("fetch success");
-    loadContent(
-    <React.Fragment style={spinnerz}>
-      <Spinner color="success" />
-      <Spinner color="danger" />
-      <Spinner color="warning" />
-      <Spinner color="info" />
-    </React.Fragment>
+    console.log(setResult);
+    setResult( "HOOK STATE BEFORE FETCH"
+    // <React.Fragment style={spinnerz}>
+    //   <Spinner color="success" />
+    //   <Spinner color="danger" />
+    //   <Spinner color="warning" />
+    //   <Spinner color="info" />
+    // </React.Fragment>
     );
-        
-    console.log(call.price, call.location);
-   
-    fetch(
+    
+    let response;
+   try {
+    response = await fetch(
       `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?price_level=${call.price}&types=restaurant&location=${call.location}&radius=4000&key=${process.env.REACT_APP_GOOGLE_API_KEY}`,
     )
-    .then(response => response.json())
-    .then((jsonifiedResponse) => {
-      console.log(jsonifiedResponse.results)
+  } catch(error){
+    console.log(error, "fetch error");
+  }
+  let data;
+  try {
+    data = await response.json();
+  } catch(error){
+    console.log(error, "response error");
+  }
+    let restaurantList = data.results.map( ele => {
+      return {name: ele.name, rating: ele.rating, vicinity: ele.vicinity, location: ele.geometry.location}
+      });
+    setResult(restaurantList);
+    console.log(showResult, "HOOK STATE AFTER FETCH");
+
+    // .then(response => response.json())
+    // .then((jsonifiedResponse) => {
+      // console.log(jsonifiedResponse.results)
       // setContent(jsonifiedResponse.results)
      
       
-    })
-    .catch((error) => {
-      console.log(error.message);
-    })
+  //   })
+  //   .catch((error) => {
+  //     console.log(error.message);
+  //   })
 
-    console.log(showResult)
+  //   console.log(showResult)
   };
 
   // const handleClick = (event) => {
@@ -112,11 +128,11 @@ function GetRestaurant(props) {
     } else {
       currentlyVisibleState =
       <Result>
-        {console.log('results page goes here')}
+        {console.log('results page render:', showResult)}
           {/* // name={jsonifiedResponse.name}
           // address={restaurant.vicinity}
           // map={restaurant.html_attributions} */}
-        {showResult}
+        {/* {showResult} */}
       </Result>
     }
   }

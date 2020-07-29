@@ -17,7 +17,6 @@ const InlineFormStyle = {
 function ShrugForm(props) {
   const [price, setPrice] = useState("1");
   const [location, setLocation] = useState("45.523064, -122.676483");
-  // console.log(props)
   function handlePriceChange(e) {
     e.preventDefault();
     console.log("Price Value",e.target.value);
