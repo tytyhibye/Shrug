@@ -1,0 +1,61 @@
+/* media queries */
+
+/*Phones*/
+@media (max-width: 576px) {
+  .returns{
+    padding: 5%;
+  }
+  .splash{
+    margin-top: 20%;
+  }
+  .splashImg{
+    max-width: 70vw;
+  }
+  .fadeIn{
+    margin-top: 20%;
+  }
+  .formDrop{
+    margin: 0 auto;
+    min-width: 70vw;
+  }
+  .spinnerz{
+    margin-top: 50%;
+  }
+}
+/*Tablets*/
+@media (min-width: 576px) {
+  .splashImg{
+    max-width: 50vw;
+  }
+  .splash{
+    margin-top: 5%;
+  }
+  .fadeIn{
+    margin-top: 10%;
+  }
+  .formDrop{
+    margin: 0 auto;
+  }
+  .spinnerz{
+    margin-top: 30%;
+  }
+}
+/*Desktopss*/
+@media (min-width: 992px) {
+  .splashImg{
+    max-width: 40vw;
+  }
+  .splash{
+    margin-top:2%;
+  }
+  .fadeIn{
+    margin-top: 10%;
+  }
+  .formDrop{
+    margin: 0 auto;
+    max-width: 20vw;
+  }
+  .spinnerz{
+    margin-top: 20%;
+  }
+}

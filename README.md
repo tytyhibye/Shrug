@@ -5,10 +5,10 @@
 
 <hr/>
 
-## Proposal
+## Description
 
 A React Web application for a restuarant suggestion generator. <br>
-The user signs in and is prompted to input their price range and zip code. The application will then return a restaurant within the parameters of the user inputs.
+The user signs in and is prompted to input their price range and zip code. The application will then return a restaurant at random within the parameters of the user inputs.
 
 <hr />
 
@@ -35,7 +35,7 @@ The user signs in and is prompted to input their price range and zip code. The a
 | :heavy_check_mark: | User can input preferred price range and zip code                   |
 | :heavy_check_mark: | Results card will output random restaurant within parameters        |
 | :heavy_check_mark: | User can re-roll if not satisfied with output restaurant            |
-|                    | Results card will include GoogleMap pinned location of restaurant   |
+| :heavy_check_mark: | Results card will include GoogleMap view of returned location       |
 
 <br/>
 <br/>
@@ -43,10 +43,10 @@ The user signs in and is prompted to input their price range and zip code. The a
 |                    | Stretch Goals                                           |
 | ------------------ | ------------------------------------------------------- |
 | :heavy_check_mark: | Clean, Responsive UI                                    |
+| :heavy_check_mark: | Site is deployed                                        |
 |                    | Adding results to database to prevent duplicate results |
-|                    | Using IBM Watson API for chatbot interactivity          |
+|                    | Map includes pinned location with optional directions   |
 |                    | Search functionality for restaurants in general area    |
-|                    | Hosting                                                 |
 
 <hr />
 
@@ -92,10 +92,7 @@ If you have a bug or an idea, browse the open issues before opening a new one. Y
 - React
 - Firebase
 - Firestore
-- Yelp Api
 - Google Api
-- IBM Watson Api
-- Puppeteer
 - Redux
 - Reactstrap
 - Bootstrap
