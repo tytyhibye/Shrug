@@ -7,7 +7,7 @@
 
 ## Description
 
-A React Web application for a restuarant suggestion generator. <br>
+A React Web application for a restaurant suggestion generator. <br>
 The user signs in and is prompted to input their price range and zip code. The application will then return a restaurant at random within the parameters of the user inputs. Check it out [here](https://shrug-76e04.firebaseapp.com/).
 
 <hr />
