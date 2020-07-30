@@ -43,6 +43,9 @@ form.form-inline {
   flex-direction: row;
   flex-wrap: nowrap;
 }
+#map {
+  height: 100%;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

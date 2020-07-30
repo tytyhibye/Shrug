@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import ReactDom from "react-dom";
 import ShrugForm from "./ShrugForm";
 import { Spinner } from "react-bootstrap";
@@ -15,7 +15,7 @@ const splashImg = {
 };
 
 const spinnerz = {
-  margin: "0 auto",
+  marginTop: "20%",
 }
 
 function GetRestaurant(props) {
@@ -24,18 +24,14 @@ function GetRestaurant(props) {
   // const [error, setError] = useState(null);
   const [showResult, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [show, setShow] = useState(false);
 
-  const toggleResult = () => {
-    setShow(true);
-  };
 
   let loadingScreen = (
     <div style={spinnerz}>
-      <Spinner color="success" />
-      <Spinner color="danger" />
-      <Spinner color="warning" />
-      <Spinner color="info" />
+      <Spinner animation="grow" variant="info" />
+      <Spinner animation="grow" variant="warning" />
+      <Spinner animation="grow" variant="danger" />
+      <Spinner animation="grow" variant="success" />
     </div>
   )
   const makeApiCall = async (call) => {
@@ -60,20 +56,7 @@ function GetRestaurant(props) {
     });
     setResult(restaurantList);
     setLoading(false);
-    setShow(true);
-
-    // .then(response => response.json())
-    // .then((jsonifiedResponse) => {
-      // console.log(jsonifiedResponse.results)
-      // setResult(jsonifiedResponse.results)
-  //   })
-  //   .catch((error) => {
-  //     console.log(error.message);
-  //   })
-
   };
-
-
 
   const formSubmissionHandler = (e, price, location) => {
     e.preventDefault();
@@ -85,18 +68,6 @@ function GetRestaurant(props) {
     return false;
   }
 
-  
-
-  // const handleReroll = (event) => {
-  //   event.preventDefault();
-  //   // call math.random function;
-  // };
-
-  // const handleSuccess = (event) => {
-  //   event.preventDefault();
-  //   // add restaurant to user's database
-  // };
-
   let currentlyVisibleState = null;
   const auth = firebase.auth();
   if (loading) {
@@ -107,6 +78,7 @@ function GetRestaurant(props) {
   } else if (isLoaded(auth) && auth.currentUser == null) {
     console.log(auth.currentUser, "user returning null");
     return (
+
       <div style={splashStyles}>
         <img style={splashImg} src="https://iili.io/dAwz3x.png" />
         <h6>
@@ -118,9 +90,7 @@ function GetRestaurant(props) {
     if (formVisibleOnPage) {
       currentlyVisibleState = <ShrugForm onFormSubmission={formSubmissionHandler} />
     } else if(!!showResult) {
-      currentlyVisibleState = <Result resultList={showResult} getModal={toggleResult}/>
-    
-    
+      currentlyVisibleState = <Result resultList={showResult} />
     }
   }
   return (

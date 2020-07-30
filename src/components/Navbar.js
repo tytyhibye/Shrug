@@ -12,7 +12,7 @@ const navImg = {
 
 function NavBar() {
   const [redirect, setRedirect] = useState(null);
-  const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
+  // const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   function doSignOut() {
     firebase
       .auth()
@@ -41,7 +41,8 @@ function NavBar() {
           <Nav className="mr-auto">
             <NavDropdown title="Menu" id="basic-nav-dropdown">
               <NavDropdown.Item>
-                <Link className="homeLink" to="/" onClick={()=>setFormVisibleOnPage(!!formVisibleOnPage)}>
+              {/* onClick={()=>setFormVisibleOnPage(!!formVisibleOnPage)} */}
+                <Link className="homeLink" to="/">
                   Home
                 </Link>
               </NavDropdown.Item>
