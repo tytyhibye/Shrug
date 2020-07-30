@@ -30,7 +30,7 @@ function NavBar() {
     window.location ='https://github.com/tytyhibye/Shrug';
   }
   function homeSkies(){
-    window.location ='http://localhost:3001';
+    window.location ='https://shrug-76e04.firebaseapp.com/';
   }
 
   return (

@@ -3,10 +3,7 @@ import { Redirect } from "react-router-dom";
 import firebase from "firebase/app";
 import { Button } from "react-bootstrap";
 
-const signInStyles = {
-  marginTop: "20%",
-  textAlign: "center",
-};
+
 function SignIn() {
   const [redirect, setRedirect] = useState(null);
 
@@ -30,8 +27,9 @@ function SignIn() {
   return (
     <React.Fragment>
       {redirect}
-      <div style={signInStyles}>
+      <div className="fadeIn">
         <h1>Sign In</h1>
+        <br/><br/>
         <form onSubmit={doSignIn}>
           <input type="text" name="signInEmail" placeholder="Email" />
           <br />
@@ -43,7 +41,7 @@ function SignIn() {
             variant="outline-info"
             type="submit"
           >
-            Sign In
+          Sign In
           </Button>
           <br />
           <br />

@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import MapContainer from "./GoogleMap.js";
+// import "../fonts/Ranchers-Regular.ttf";
 
 
 const resultStyles = {
   marginTop: "5%",
   textAlign: "center",
 }
-
-// const mapStyles = {
-//   width: "60vw",
-//   height: "30vh",
-//   border: "5px red",
-//   frameborder: "5",
-//   style: "border:0",
-//   margin: "0 auto",
-// }
 
 
 const Result = ({resultList}) => {
@@ -27,22 +19,26 @@ const Result = ({resultList}) => {
   console.log(pick.location, "pick.location");
 
   return (
-    <div style={resultStyles}>
-      <h5>Let's Eat At...</h5>
-        <h1>{pick.name}</h1>
-        <h6>It's Rated {pick.rating}/5 Stars!</h6>
+    <div className="fadeIn" style={resultStyles}>
+      <div className="returns">
+        <h5>Let's Eat At...</h5>
+        <h1 className="result">{pick.name}</h1>
         <br/>
-        <h6>Location: {pick.vicinity}</h6>
-        <br/><br/>
+        <h5 className="rating">It's Rated {pick.rating}/5 Stars!</h5>
+        <br/>
+        <h5>Location: {pick.vicinity}</h5>
+        <br/>
+      </div>
         <Button
           onClick={()=>restaurant()}
           className="searchButton"
-          variant="dark"
+          variant="info"
           size="lg"
           // block
           >
           Not into it? Click for another
         </Button>
+        <br/><br/>
         <MapContainer lat={pick.location.lat} long={pick.location.lng}/>
 
     </div>

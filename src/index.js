@@ -10,6 +10,8 @@ import { createFirestoreInstance } from 'redux-firestore';
 import firebase from "./firebase";
 import 'firebase/auth';
 import './index.css';
+import './fonts/Ranchers-Regular.ttf';
+import './styles.css';
 
 
 

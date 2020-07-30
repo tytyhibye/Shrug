@@ -6,18 +6,7 @@ import Result from "./Result";
 import { withFirestore, isLoaded } from "react-redux-firebase";
 import firebase from "../firebase";
 
-const splashStyles = {
-  marginTop: "5%",
-};
 
-const splashImg = {
-  // width: "400px",
-  maxWidth: "70vw",
-};
-
-const spinnerz = {
-  marginTop: "20%",
-}
 
 function GetRestaurant(props) {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(true);
@@ -28,7 +17,7 @@ function GetRestaurant(props) {
 
 
   let loadingScreen = (
-    <div style={spinnerz}>
+    <div className="spinnerz">
       <Spinner className="spinner1" animation="grow" variant="info" />
       <Spinner className="spinner2" animation="grow" variant="warning" />
       <Spinner className="spinner3" animation="grow" variant="danger" />
@@ -80,8 +69,8 @@ function GetRestaurant(props) {
     console.log(auth.currentUser, "user returning null");
     return (
 
-      <div style={splashStyles}>
-        <img style={splashImg} src="https://iili.io/dAwz3x.png" />
+      <div className="splash">
+        <img className="splashImg animated bounceInDown"src="https://iili.io/dAwz3x.png" />
         <h6>
           Please <a href="/signIn">sign in</a> to begin.
         </h6>
