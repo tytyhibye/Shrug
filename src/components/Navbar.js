@@ -12,7 +12,6 @@ const navImg = {
 
 function NavBar() {
   const [redirect, setRedirect] = useState(null);
-  // const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   function doSignOut() {
     firebase
       .auth()
@@ -30,6 +29,9 @@ function NavBar() {
   function gitHubRepo() {
     window.location ='https://github.com/tytyhibye/Shrug';
   }
+  function homeSkies(){
+    window.location ='http://localhost:3001';
+  }
 
   return (
     <React.Fragment>
@@ -39,10 +41,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavDropdown title="Menu" id="basic-nav-dropdown">
+            <NavDropdown title="Menu" variant="dark" id="basic-nav-dropdown">
               <NavDropdown.Item>
-              {/* onClick={()=>setFormVisibleOnPage(!!formVisibleOnPage)} */}
-                <Link className="homeLink" to="/">
+                <Link className="homeLink" onClick={()=>homeSkies()}>
                   Home
                 </Link>
               </NavDropdown.Item>

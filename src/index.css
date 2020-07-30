@@ -5,7 +5,7 @@ body {
     rgb(190, 190, 190)
   );
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
@@ -17,15 +17,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-/* 
-.splashStyles {
-  margin-top: 20%;
-};
-
-.splashImg {
-  width: 200px;
-}; */
 
 button.searchButton {
   height: 43px;
@@ -108,26 +99,13 @@ input.form-control {
   outline: none;
   box-shadow: 0 2px 4px 0 rgna(0, 0, 0, 0.1);
 }
-
-/* .formBtn {
-  color: #fff;
-  background-color: rgb(70,108,82);
-  border-color: rgb(70,108,82);
-  color: #f6f6f2;
-  width: auto;
-  font-size: 1.5rem;
-  margin-top: 2%;
-  margin-left: 1%;
-  margin-bottom: 0.5%;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
-  border: none;
-  transition: all .4s ease-in-out;
-  
+.spinner2{
+  animation-delay: .10s;
 }
-.formBtn:hover {
-  color: #fff;
-  background-color: rgb(106, 165, 125);
-  border-color: rgb(106, 165, 125);
-} */
+.spinner3{
+  animation-delay: .15s;
+}
+.spinner3{
+  animation-delay: .20s;
+}
+

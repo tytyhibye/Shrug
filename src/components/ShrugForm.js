@@ -47,7 +47,7 @@ function ShrugForm(props) {
             <option value = "45.523064,-122.676483">Select a City</option>
             <option value = "45.523064,-122.676483">Portland, OR</option>
             <option value = "47.608013,-122.335167">Seattle, WA</option>
-            <option value = "40.0581728,-121.3153096">Bend, OR</option>
+            <option value = "44.058174,-121.315308">Bend, OR</option>
             <option value = "43.1561681,-75.8449946">New York, NY</option>
             <option value = "34.0536909,-118.2427666">Los Angeles, CA</option>
             <option value = "41.8755616,-87.6244212">Chicago, IL</option>
@@ -74,7 +74,7 @@ function ShrugForm(props) {
         <br /><br />
         <Button
           className="searchButton"
-          variant="outline-success"
+          variant="outline-info"
           type="submit"
           >
          Feed Me

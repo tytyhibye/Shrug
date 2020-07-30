@@ -40,7 +40,7 @@ function SignIn() {
           <br />
           <Button
             className="searchButton"
-            variant="outline-success"
+            variant="outline-info"
             type="submit"
           >
             Sign In

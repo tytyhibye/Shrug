@@ -7,11 +7,12 @@ import { withFirestore, isLoaded } from "react-redux-firebase";
 import firebase from "../firebase";
 
 const splashStyles = {
-  marginTop: "20%",
+  marginTop: "5%",
 };
 
 const splashImg = {
-  width: "400px",
+  // width: "400px",
+  maxWidth: "70vw",
 };
 
 const spinnerz = {
@@ -28,10 +29,10 @@ function GetRestaurant(props) {
 
   let loadingScreen = (
     <div style={spinnerz}>
-      <Spinner animation="grow" variant="info" />
-      <Spinner animation="grow" variant="warning" />
-      <Spinner animation="grow" variant="danger" />
-      <Spinner animation="grow" variant="success" />
+      <Spinner className="spinner1" animation="grow" variant="info" />
+      <Spinner className="spinner2" animation="grow" variant="warning" />
+      <Spinner className="spinner3" animation="grow" variant="danger" />
+      <Spinner className="spinner4" animation="grow" variant="success" />
     </div>
   )
   const makeApiCall = async (call) => {
