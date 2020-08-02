@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import MapContainer from "./GoogleMap.js";
-// import "../fonts/Ranchers-Regular.ttf";
 
 
 const resultStyles = {
@@ -11,12 +10,11 @@ const resultStyles = {
 
 
 const Result = ({resultList}) => {
-  
+
   const[pick, setPick] = useState(resultList[Math.floor(Math.random() * resultList.length)]);
   const restaurant = () => {
   setPick(resultList[Math.floor(Math.random() * resultList.length)])
   };
-  console.log(pick.location, "pick.location");
 
   return (
     <div className="fadeIn" style={resultStyles}>
@@ -34,7 +32,6 @@ const Result = ({resultList}) => {
           className="searchButton"
           variant="info"
           size="lg"
-          // block
           >
           Not into it? Click for another
         </Button>

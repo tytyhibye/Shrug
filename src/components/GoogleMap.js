@@ -12,8 +12,6 @@ const mapStyles = {
 export class MapContainer extends Component {
 
   render() {
-    console.log(this.props.lat);
-    console.log(this.props.long);
     return (
       <Map
         google={this.props.google}

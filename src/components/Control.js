@@ -1,17 +1,14 @@
-import React, { useState, useRef } from "react";
-import ReactDom from "react-dom";
+import React, { useState } from "react";
 import ShrugForm from "./ShrugForm";
 import { Spinner } from "react-bootstrap";
 import Result from "./Result";
-import { withFirestore, isLoaded } from "react-redux-firebase";
+import { isLoaded } from "react-redux-firebase";
 import firebase from "../firebase";
 
 
 
-function GetRestaurant(props) {
+function GetRestaurant() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(true);
-  // const [restaurant, setRestaurants] = useState(null);
-  // const [error, setError] = useState(null);
   const [showResult, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -25,7 +22,6 @@ function GetRestaurant(props) {
     </div>
   )
   const makeApiCall = async (call) => {
-    console.log("fetch success");
     setLoading(true);
     let response;
    try {
@@ -70,7 +66,7 @@ function GetRestaurant(props) {
     return (
 
       <div className="splash">
-        <img className="splashImg animated bounceInDown"src="https://iili.io/dAwz3x.png" />
+        <img className="splashImg animated bounceInDown"src="https://iili.io/dAwz3x.png" alt="Shrug Logo"/>
         <h6>
           Please <a href="/signIn">sign in</a> to begin.
         </h6>

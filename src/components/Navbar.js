@@ -37,7 +37,7 @@ function NavBar() {
     <React.Fragment>
       {redirect}
       <Navbar className="navBar" bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand><img style={navImg} src="https://iili.io/dAwz3x.png" /></Navbar.Brand>
+        <Navbar.Brand><img style={navImg} src="https://iili.io/dAwz3x.png" alt="Shrug Logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
