@@ -16,11 +16,11 @@ The user signs in and is prompted to input their price range and zip code. The a
 
 ### App Design
 
-<img src='src\Assets\component-diagram.drawio.png'>
+<img src="https://i.ibb.co/52DT3mp/new-Card-Diagram.jpg" alt="new-Card-Diagram">
 
 ### Card Design
 
-<img src='src\Assets\card-diagram.drawio.png'>
+<!-- <img src='src\Assets\card-diagram.drawio.png'> -->
 
 <hr/>
 
@@ -44,9 +44,10 @@ The user signs in and is prompted to input their price range and zip code. The a
 | ------------------ | ------------------------------------------------------- |
 | :heavy_check_mark: | Clean, Responsive UI                                    |
 | :heavy_check_mark: | Site is deployed                                        |
-|                    | Adding results to database to prevent duplicate results |
 |                    | Map includes pinned location with optional directions   |
 |                    | Search functionality for restaurants in general area    |
+|                    | Add user profiles to application |
+|                    | utilize firebase to record profile history to prevent repeat returns upon further use |
 
 <hr />
 
