@@ -3,11 +3,18 @@ import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const navImg = {
   width: "75px",
 };
+const navLinkStyles = {
+  marginLeft: "10%",
+}
 
 
 function NavBar() {
@@ -37,25 +44,28 @@ function NavBar() {
     <React.Fragment>
       {redirect}
       <Navbar className="navBar" bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand><img style={navImg} src="https://iili.io/dAwz3x.png" alt="Shrug Logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavDropdown title="Menu" variant="dark" id="basic-nav-dropdown">
+            <NavDropdown title={<img style={navImg} src="https://iili.io/dAwz3x.png" alt="Shrug Logo" />} variant="dark" id="basic-nav-dropdown">
               <NavDropdown.Item>
                 <Link className="homeLink" onClick={()=>homeSkies()}>
-                  Home
+                  <div className="noWrap">
+                    <FontAwesomeIcon icon={faHome}/><p style={navLinkStyles}>Home</p>
+                  </div>
                 </Link>
               </NavDropdown.Item>
               <NavDropdown.Item className="outLink" onClick={doSignOut}>
-                Sign Out
+                <div className="noWrap">
+                  <FontAwesomeIcon icon={faSignOutAlt}/><p style={navLinkStyles}>Log Out</p>
+                </div>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 <Link className="ghIcon" onClick={()=>gitHubRepo()}>
-                <img
-                className="ghIcon"
-                src="https://i.ibb.co/gyGGjwz/githubicon.png" alt="github icon"/>    Project Repo
+                  <div className="noWrap">
+                    <FontAwesomeIcon icon={faGithubAlt}/><p style={navLinkStyles}>Git Hub</p>
+                  </div>
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>

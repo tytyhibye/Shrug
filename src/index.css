@@ -36,6 +36,11 @@ body {
 .formDrop {
   width: 40vw;
 }
+.noWrap{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
 
 form.form-inline {
   flex-direction: row;
