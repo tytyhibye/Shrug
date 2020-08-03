@@ -71,7 +71,7 @@ function NavBar() {
             </NavDropdown>
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <FormControl type="text" placeholder="Coming Soon" className="mr-sm-2" />
             <Button className="searchButton" variant="outline-success">
               Search
             </Button>
