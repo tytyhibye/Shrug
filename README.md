@@ -16,11 +16,11 @@ The user signs in and is prompted to input their price range and zip code. The a
 
 ### App Design
 
-<img src="https://i.ibb.co/52DT3mp/new-Card-Diagram.jpg" alt="new-Card-Diagram">
+<img src='src\Assets\component-diagram.drawio.png'>
 
 ### Card Design
 
-<!-- <img src='src\Assets\card-diagram.drawio.png'> -->
+<img src="https://i.ibb.co/52DT3mp/new-Card-Diagram.jpg" alt="new-Card-Diagram">
 
 <hr/>
 
