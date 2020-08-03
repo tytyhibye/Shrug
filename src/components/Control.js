@@ -76,7 +76,8 @@ function GetRestaurant() {
     if (formVisibleOnPage) {
       currentlyVisibleState = <ShrugForm onFormSubmission={formSubmissionHandler} />
     } else if(!!showResult) {
-      currentlyVisibleState = <Result resultList={showResult} />
+      return loadingScreen;
+  //     currentlyVisibleState = <Result resultList={showResult} />
     }
   }
   return (

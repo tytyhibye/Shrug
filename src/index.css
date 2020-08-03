@@ -106,14 +106,17 @@ input.form-control {
   outline: none;
   box-shadow: 0 2px 4px 0 rgna(0, 0, 0, 0.1);
 }
-.spinner2{
-  animation-delay: .05s;
+.spinner1{
+  animation-delay: .01s;
 }
-.spinner3{
+.spinner2{
   animation-delay: .10s;
 }
 .spinner3{
-  animation-delay: .15s;
+  animation-delay: .20s;
+}
+.spinner4{
+  animation-delay: .30s;
 }
 
 .animated {
