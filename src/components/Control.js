@@ -24,9 +24,15 @@ function GetRestaurant() {
   const makeApiCall = async (call) => {
     setLoading(true);
     let response;
-   try {
+  try {
     response = await fetch(
       `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?price_level=${call.price}&types=restaurant&location=${call.location}&radius=4000&key=${process.env.REACT_APP_GOOGLE_API_KEY}`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      },
     )
   } catch(error){
     console.log(error, "fetch error");

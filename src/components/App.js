@@ -1,5 +1,5 @@
 import React from "react";
-import NavBar from "./NavBar";
+import NavBar from "./Navbar";
 import Control from "./Control";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
