@@ -81,7 +81,7 @@ $ npm run start
 
 ## Known Bugs
 
-<span style="color:red; font-weight:bold; font-size: 35px;">THIS APPLICATION IS DEPRECATEDt</span>.
+### THIS APPLICATION IS DEPRECATED
 
 The Google API "free trial" reached end of life and there was a CORS update breaking core functionality.
 
